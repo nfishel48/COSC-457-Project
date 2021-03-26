@@ -83,3 +83,11 @@ The following packages were updated:
   com.unity.timeline from version 1.2.18 to 1.4.6
 The following packages were removed:
   com.unity.2d.ik@2.1.0-preview.1
+
+=== Thu Mar 25 21:18:00 2021
+
+Packages were changed.
+Update Mode: updateDependencies
+
+The following packages were updated:
+  com.unity.ide.visualstudio from version 2.0.5 to 2.0.7
