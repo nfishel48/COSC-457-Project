@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.Events;
 
 public class CharacterController2D : MonoBehaviour
@@ -9,6 +11,7 @@ public class CharacterController2D : MonoBehaviour
 	[SerializeField] private LayerMask m_WhatIsGround;							// A mask determining what is ground to the character
 	[SerializeField] private Transform m_GroundCheck;							// A position marking where to check if the player is grounded.
 	[SerializeField] private Transform m_CeilingCheck;							// A position marking where to check for ceilings
+	[SerializeField] private LevelWindow levelWindow;							//  Create level system
 	
 
 	const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
@@ -17,6 +20,7 @@ public class CharacterController2D : MonoBehaviour
 	private Rigidbody2D m_Rigidbody2D;
 	private bool m_FacingRight = true;  // For determining which way the player is currently facing.
 	private Vector3 m_Velocity = Vector3.zero;
+	private PlayerSkills playerSkills; //Class for unlocking skills from the skill tree
 
 	[Header("Events")]
 	[Space]
@@ -29,7 +33,11 @@ public class CharacterController2D : MonoBehaviour
 
 	private void Awake()
 	{
+		LevelSystem levelSystem = new LevelSystem(); //Create level System from Construct
+		levelWindow.SetLevelSystem(levelSystem); //Create the Level system UI
 		m_Rigidbody2D = GetComponent<Rigidbody2D>();
+
+		playerSkills = new PlayerSkills(); // Create playerskills from Construct
 
 		if (OnLandEvent == null)
 			OnLandEvent = new UnityEvent();
@@ -99,5 +107,27 @@ public class CharacterController2D : MonoBehaviour
 		Vector3 theScale = transform.localScale;
 		theScale.x *= -1;
 		transform.localScale = theScale;
+	}
+
+	//Test Skill one Replace with real skill 
+	private bool TestSkillOne(){
+		Debug.Log("Skill one unlocked!");
+		return playerSkills.IsSkillUnlocked(PlayerSkills.SkillType.TestSkillOne);
+	}
+
+		//Test Skill Two Replace with real skill 
+	private bool TestSkillTwo(){
+		Debug.Log("Skill Two unlocked!");
+		return playerSkills.IsSkillUnlocked(PlayerSkills.SkillType.TestSkillTwo);
+	}
+
+		//Test Skill Three Replace with real skill 
+	private bool TestSkillTree(){
+		Debug.Log("Skill Three unlocked!");
+		return playerSkills.IsSkillUnlocked(PlayerSkills.SkillType.TestSkillThree);
+	}
+
+	public PlayerSkills GetPlayerSkills(){
+		return playerSkills;
 	}
 }
