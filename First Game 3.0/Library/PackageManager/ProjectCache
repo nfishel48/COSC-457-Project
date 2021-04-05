@@ -5,7 +5,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637523129496614786
+      ticks: 637532398205552527
     m_Hash: 3434114402
   m_LockFileStatus:
     m_FilePath: C:/Users/yoyok/GitHub/COSC-457-Project/First Game 3.0/Packages/packages-lock.json
@@ -13,7 +13,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637523130372947275
+      ticks: 637532407760145156
     m_Hash: 1281149557
 m_EmbeddedPackageManifests:
   m_ManifestsStatus:
@@ -23,7 +23,7 @@ m_EmbeddedPackageManifests:
       m_ContentTrackingEnabled: 1
       m_ModificationDate:
         serializedVersion: 2
-        ticks: 637523129496614786
+        ticks: 637532398205542524
       m_Hash: 1054714004
 m_PackageAssets:
   m_Packages:
