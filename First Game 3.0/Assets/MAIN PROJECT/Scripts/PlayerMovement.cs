@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
+
 		horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
 
 		animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
@@ -25,20 +26,13 @@ public class PlayerMovement : MonoBehaviour
 			jump = true;
 			animator.SetBool("IsJumping", true);
 		}
+		
 	}
 
 	public void OnLanding()
 	{
 		animator.SetBool("IsJumping", false);
 	}
-
-	void OnTriggerEnter2D(Collider2D other) {
-		if (other.CompareTag("Health Pickup")) {
-			PlayerStats.Instance.Heal(1);
-
-			Destroy(other.gameObject);
-		}
-    }
 
 	void FixedUpdate()
 	{
